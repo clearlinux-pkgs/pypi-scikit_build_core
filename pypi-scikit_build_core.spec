@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : pypi-scikit_build_core
-Version  : 0.9.2
-Release  : 1
-URL      : https://files.pythonhosted.org/packages/c2/fe/8254f8b334d61da20c28df93dfcb7e36c2780b33f0e3807730577c9333e5/scikit_build_core-0.9.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/c2/fe/8254f8b334d61da20c28df93dfcb7e36c2780b33f0e3807730577c9333e5/scikit_build_core-0.9.2.tar.gz
+Version  : 0.9.4
+Release  : 2
+URL      : https://files.pythonhosted.org/packages/62/ac/d710b58de10de99d7cf1d8f3bedd547cfd35b38111c4d68d1c4983a661db/scikit_build_core-0.9.4.tar.gz
+Source0  : https://files.pythonhosted.org/packages/62/ac/d710b58de10de99d7cf1d8f3bedd547cfd35b38111c4d68d1c4983a661db/scikit_build_core-0.9.4.tar.gz
 Summary  : Build backend for CMake based projects
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause MIT
@@ -59,15 +59,15 @@ python3 components for the pypi-scikit_build_core package.
 
 
 %prep
-%setup -q -n scikit_build_core-0.9.2
-cd %{_builddir}/scikit_build_core-0.9.2
+%setup -q -n scikit_build_core-0.9.4
+cd %{_builddir}/scikit_build_core-0.9.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713796533
+export SOURCE_DATE_EPOCH=1716834626
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -103,8 +103,15 @@ LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-scikit_build_core
+cp %{_builddir}/scikit_build_core-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-scikit_build_core/d83c74455ed330bb1074bc9f22d4dd64ccc56242 || :
+cp %{_builddir}/scikit_build_core-%{version}/docs/examples/downstream/nanobind_example/LICENSE %{buildroot}/usr/share/package-licenses/pypi-scikit_build_core/3fae42cfffc123f30fada8748f70ea999d5ee060 || :
+cp %{_builddir}/scikit_build_core-%{version}/docs/examples/downstream/pybind11_example/LICENSE %{buildroot}/usr/share/package-licenses/pypi-scikit_build_core/53a95a113732642d33f43f8beaa9993a0654a3f8 || :
 cp %{_builddir}/scikit_build_core-%{version}/src/scikit_build_core/_vendor/pyproject_metadata/LICENSE %{buildroot}/usr/share/package-licenses/pypi-scikit_build_core/4339a5c41946d5ce6e23a8b8c4fff00d838d40c9 || :
 cp %{_builddir}/scikit_build_core-%{version}/src/scikit_build_core/resources/find_python/Copyright.txt %{buildroot}/usr/share/package-licenses/pypi-scikit_build_core/d8969c402f7a24729c2cf988628f701668cab342 || :
+cp %{_builddir}/scikit_build_core-%{version}/tests/packages/simple_pyproject_ext/LICENSE %{buildroot}/usr/share/package-licenses/pypi-scikit_build_core/d83c74455ed330bb1074bc9f22d4dd64ccc56242 || :
+cp %{_builddir}/scikit_build_core-%{version}/tests/packages/simple_pyproject_script_with_flags/LICENSE %{buildroot}/usr/share/package-licenses/pypi-scikit_build_core/d83c74455ed330bb1074bc9f22d4dd64ccc56242 || :
+cp %{_builddir}/scikit_build_core-%{version}/tests/packages/simple_pyproject_source_dir/LICENSE %{buildroot}/usr/share/package-licenses/pypi-scikit_build_core/d83c74455ed330bb1074bc9f22d4dd64ccc56242 || :
+cp %{_builddir}/scikit_build_core-%{version}/tests/packages/simple_setuptools_ext/LICENSE %{buildroot}/usr/share/package-licenses/pypi-scikit_build_core/d83c74455ed330bb1074bc9f22d4dd64ccc56242 || :
 python3 -m installer --destdir=%{buildroot} dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -115,7 +122,10 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/pypi-scikit_build_core/3fae42cfffc123f30fada8748f70ea999d5ee060
 /usr/share/package-licenses/pypi-scikit_build_core/4339a5c41946d5ce6e23a8b8c4fff00d838d40c9
+/usr/share/package-licenses/pypi-scikit_build_core/53a95a113732642d33f43f8beaa9993a0654a3f8
+/usr/share/package-licenses/pypi-scikit_build_core/d83c74455ed330bb1074bc9f22d4dd64ccc56242
 /usr/share/package-licenses/pypi-scikit_build_core/d8969c402f7a24729c2cf988628f701668cab342
 
 %files python
