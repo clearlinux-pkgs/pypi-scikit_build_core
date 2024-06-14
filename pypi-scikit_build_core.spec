@@ -6,10 +6,10 @@
 # autospec commit: fbcebd0
 #
 Name     : pypi-scikit_build_core
-Version  : 0.9.5
-Release  : 3
-URL      : https://files.pythonhosted.org/packages/35/91/23e5445cb1572efe17f1029c3bff1d57f235b5f909d442ca952b4efd87ab/scikit_build_core-0.9.5.tar.gz
-Source0  : https://files.pythonhosted.org/packages/35/91/23e5445cb1572efe17f1029c3bff1d57f235b5f909d442ca952b4efd87ab/scikit_build_core-0.9.5.tar.gz
+Version  : 0.9.6
+Release  : 4
+URL      : https://files.pythonhosted.org/packages/0e/76/fff33034a3a1c61396e7df7bd12ff4475d478b73a2a6609df3f879f299b3/scikit_build_core-0.9.6.tar.gz
+Source0  : https://files.pythonhosted.org/packages/0e/76/fff33034a3a1c61396e7df7bd12ff4475d478b73a2a6609df3f879f299b3/scikit_build_core-0.9.6.tar.gz
 Summary  : Build backend for CMake based projects
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause MIT
@@ -59,15 +59,15 @@ python3 components for the pypi-scikit_build_core package.
 
 
 %prep
-%setup -q -n scikit_build_core-0.9.5
-cd %{_builddir}/scikit_build_core-0.9.5
+%setup -q -n scikit_build_core-0.9.6
+cd %{_builddir}/scikit_build_core-0.9.6
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1717433311
+export SOURCE_DATE_EPOCH=1718379690
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
