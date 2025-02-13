@@ -7,7 +7,7 @@
 #
 Name     : pypi-scikit_build_core
 Version  : 0.10.7
-Release  : 37
+Release  : 38
 URL      : https://files.pythonhosted.org/packages/34/75/ad5664c8050bbbea46a5f2b6a3dfbc6e6cf284826c0eee0a12f861364b3f/scikit_build_core-0.10.7.tar.gz
 Source0  : https://files.pythonhosted.org/packages/34/75/ad5664c8050bbbea46a5f2b6a3dfbc6e6cf284826c0eee0a12f861364b3f/scikit_build_core-0.10.7.tar.gz
 Summary  : Build backend for CMake based projects
