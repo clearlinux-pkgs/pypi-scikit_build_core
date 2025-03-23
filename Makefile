@@ -1,5 +1,5 @@
 PKG_NAME := pypi-scikit_build_core
-URL = https://files.pythonhosted.org/packages/88/63/d99a097afa886b4534332f3dba46c2c9130c9b8bd0cb08beb8c8c395a55f/scikit_build_core-0.11.0.tar.gz
+URL = https://files.pythonhosted.org/packages/7d/c0/2a727babf85297180e2f547fc302ee7898e4bccbe51cb351f4d6273a7911/scikit_build_core-0.11.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
